@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker PRO - Ultimate Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-wallet"></i> Expense Tracker <span>PRO</span></h1>
+            <p>Mashruuca 4: Maamulka Dhaqaalaha & Xisaabinta Xirfadaha Leh</p>
+        </header>
+
+        <!-- Dashboard-ka Shuruudaha -->
+        <div class="dashboard">
+            <div class="card income-card">
+                <div class="card-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <div class="card-info">
+                    <h3>Wadarta Dakhliga</h3>
+                    <p id="total-income">$0.00</p>
+                </div>
+            </div>
+            <div class="card expense-card">
+                <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                <div class="card-info">
+                    <h3>Wadarta Kharashka</h3>
+                    <p id="total-expense">$0.00</p>
+                </div>
+            </div>
+            <div class="card balance-card">
+                <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="card-info">
+                    <h3>Lacagta Kuu Hartay</h3>
+                    <p id="net-balance">$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Foomka Diiwaangelinta -->
+            <div class="form-section">
+                <h3><i class="fa-solid fa-plus-circle"></i> Ku Dar Diiwaan Cusub</h3>
+                <form id="transaction-form">
+                    <div class="input-group">
+                        <label for="description">Magaca Macaamilka</label>
+                        <input type="text" id="description" placeholder="Tusaale: Mushaar, Cunto..." required>
+                    </div>
+                    <div class="input-group">
+                        <label for="amount">Lacagta ($)</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="type">Nooca Dhaqdhaqaaqa</label>
+                        <select id="type" required>
+                            <option value="income">Dakhli (Income)</option>
+                            <option value="expense">Kharash (Expense)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="category">Qaybta (Category)</label>
+                        <input type="text" id="category" placeholder="Tusaale: Suuq, Kirada, Gaadiid..." required>
+                    </div>
+                    <div class="input-group">
+                        <label for="date">Taariikhda</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Kaydi Diiwaanka</button>
+                </form>
+            </div>
+
+            <!-- List, Search, iyo Filter -->
+            <div class="history-section">
+                <div class="controls-container">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Raadi diiwaan...">
+                    </div>
+                    <div class="filter-box">
+                        <select id="filter-type">
+                            <option value="all">Dhammaan</option>
+                            <option value="income">Dakhli Kaliya</option>
+                            <option value="expense">Kharash Kaliya</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="history-card">
+                    <div class="history-header">
+                        <h3><i class="fa-solid fa-history"></i> Taariikhda Diiwaannada</h3>
+                        <button id="clear-all" class="btn-clear" title="Tirtir Dhammaan"><i class="fa-solid fa-trash-can"></i> Tirtir Dhammaan</button>
+                    </div>
+                    <ul id="transaction-list">
+                        <!-- JavaScript ayaa soo gelinaysa -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
